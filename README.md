@@ -4,7 +4,7 @@ Fill the environment variables in .env.example first, then executes these comman
 
 ```bash
 
-mv .env.example .env
+cp .env.example .env
 bash generate_key.sh
 docker compose up -d
 ```
