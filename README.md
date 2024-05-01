@@ -1,13 +1,15 @@
 # mongodb-replica
 
+Fill the environment variables in .env.example first, then executes these commands:
+
 ```bash
-# Fill the environments in .env.example, then executes these commands
+
 mv .env.example .env
 bash generate_key.sh
 docker compose up -d
 ```
 
-Run inside a mongo instance (mongo1):
+Go inside a mongo instance (mongo1):
 
 ```bash
 docker exec -it mongo1 bash
@@ -33,4 +35,10 @@ rs.initiate({
     { _id: 2, host: 'mongo3:27017' },
   ],
 });
+```
+
+To check, if the replica is created, execute this command:
+
+```js
+rs.status();
 ```
